@@ -1,0 +1,20 @@
+[
+{
+  "directory": "/home/tarpon/projects/C_Function_Plotter/build",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -I/home/tarpon/projects/C_Function_Plotter/build/C_Function_Plotter_autogen/include -isystem /usr/include/x86_64-linux-gnu/qt5 -isystem /usr/include/x86_64-linux-gnu/qt5/QtWidgets -isystem /usr/include/x86_64-linux-gnu/qt5/QtGui -isystem /usr/include/x86_64-linux-gnu/qt5/QtCore -isystem /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -g -std=gnu++17 -fPIC -o CMakeFiles/C_Function_Plotter.dir/C_Function_Plotter_autogen/mocs_compilation.cpp.o -c /home/tarpon/projects/C_Function_Plotter/build/C_Function_Plotter_autogen/mocs_compilation.cpp",
+  "file": "/home/tarpon/projects/C_Function_Plotter/build/C_Function_Plotter_autogen/mocs_compilation.cpp",
+  "output": "CMakeFiles/C_Function_Plotter.dir/C_Function_Plotter_autogen/mocs_compilation.cpp.o"
+},
+{
+  "directory": "/home/tarpon/projects/C_Function_Plotter/build",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -I/home/tarpon/projects/C_Function_Plotter/build/C_Function_Plotter_autogen/include -isystem /usr/include/x86_64-linux-gnu/qt5 -isystem /usr/include/x86_64-linux-gnu/qt5/QtWidgets -isystem /usr/include/x86_64-linux-gnu/qt5/QtGui -isystem /usr/include/x86_64-linux-gnu/qt5/QtCore -isystem /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -g -std=gnu++17 -fPIC -o CMakeFiles/C_Function_Plotter.dir/main.cpp.o -c /home/tarpon/projects/C_Function_Plotter/main.cpp",
+  "file": "/home/tarpon/projects/C_Function_Plotter/main.cpp",
+  "output": "CMakeFiles/C_Function_Plotter.dir/main.cpp.o"
+},
+{
+  "directory": "/home/tarpon/projects/C_Function_Plotter/build",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -I/home/tarpon/projects/C_Function_Plotter/build/C_Function_Plotter_autogen/include -isystem /usr/include/x86_64-linux-gnu/qt5 -isystem /usr/include/x86_64-linux-gnu/qt5/QtWidgets -isystem /usr/include/x86_64-linux-gnu/qt5/QtGui -isystem /usr/include/x86_64-linux-gnu/qt5/QtCore -isystem /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -g -std=gnu++17 -fPIC -o CMakeFiles/C_Function_Plotter.dir/mainwindow.cpp.o -c /home/tarpon/projects/C_Function_Plotter/mainwindow.cpp",
+  "file": "/home/tarpon/projects/C_Function_Plotter/mainwindow.cpp",
+  "output": "CMakeFiles/C_Function_Plotter.dir/mainwindow.cpp.o"
+}
+]
