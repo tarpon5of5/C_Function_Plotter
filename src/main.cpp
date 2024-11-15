@@ -35,20 +35,40 @@ SOFTWARE.
 #include "mainwindow.h"
 
 #include <QApplication>
+#include <QDialog>
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
     MainWindow w;
     w.show();
+
+    //Qdialog();
+
     return a.exec();
 }
 
-/**********************************************
+/*
+***************************************************
 
 int main_graph_window()
 {
     return 0;
 }
 
-***********************************************/
+***************************************************
+*/
+
+/*
+***************************************************
+int main(int argc, char* argv[])
+{
+    QApplication a(argc, argv);
+    QPushButton button("Hello world!", nullptr);
+    button.resize(200, 100);
+    button.show();
+    return QApplication::exec();
+}
+
+***************************************************
+*/
