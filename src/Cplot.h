@@ -35,13 +35,39 @@ SOFTWARE.
 #define CPLOT_H
 
 #include <QMainWindow>
+#include <QPushButton>
+#include <QLabel>
+#include <QWidget>
+#include <QHBoxLayout>
+#include <QLineEdit>
+#include <QtCore/QVariant>
+
+#include <QApplication>
+
+#include <QtCore/QVariant>
+#include <QtWidgets/QAction>
+#include <QtWidgets/QApplication>
+#include <QtWidgets/QHBoxLayout>
+#include <QtWidgets/QLineEdit>
+#include <QtWidgets/QMainWindow>
+#include <QtWidgets/QMenu>
+#include <QtWidgets/QMenuBar>
+#include <QtWidgets/QPushButton>
+#include <QtWidgets/QStatusBar>
+#include <QtWidgets/QVBoxLayout>
+#include <QtWidgets/QWidget>
 
 
-QT_BEGIN_NAMESPACE
-namespace Ui {
+
+
+//QT_BEGIN_NAMESPACE
+/*
+namespace Ui 
+{
 class Cplot;
 }
-QT_END_NAMESPACE
+*/
+//QT_END_NAMESPACE
 
 
 class Cplot : public QMainWindow
@@ -51,6 +77,10 @@ class Cplot : public QMainWindow
 public:
     Cplot(QWidget *parent = nullptr);
     ~Cplot();
+
+    
+
+private:
     QAction *actionAbout;
     QWidget *centralwidget;
     QWidget *horizontalLayoutWidget;
@@ -76,9 +106,11 @@ public:
     QMenuBar *menubar;
     QMenu *menuHelp;
     QStatusBar *statusbar;
-
-private:
+    
+    /*
     Ui::Cplot *ui;
+    */
 
 };
+
 #endif // MAINWINDOW_H

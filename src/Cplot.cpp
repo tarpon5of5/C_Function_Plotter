@@ -33,6 +33,7 @@ SOFTWARE.
 
 #include "Cplot.h"
 
+#include <QApplication>
 #include <QtCore/QVariant>
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
@@ -47,8 +48,9 @@ SOFTWARE.
 #include <QtWidgets/QWidget>
 //#include "./ui_mainwindow.h"
 
+using namespace Qt;
 
-QT_BEGIN_NAMESPACE
+
 
 /*
 QT_BEGIN_NAMESPACE
@@ -228,9 +230,9 @@ Cplot::Cplot(QWidget *parent)
         //ui->setupUi;
         //experiment needs work.
         /*MainWindow->*/resize(800, 600);
-        actionAbout = new QAction(MainWindow);
+        actionAbout = new QAction(this);
         actionAbout->setObjectName(QString::fromUtf8("actionAbout"));
-        centralwidget = new QWidget(MainWindow);
+        centralwidget = new QWidget(this);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         horizontalLayoutWidget = new QWidget(centralwidget);
         horizontalLayoutWidget->setObjectName(QString::fromUtf8("horizontalLayoutWidget"));
@@ -314,26 +316,33 @@ Cplot::Cplot(QWidget *parent)
         lineEdit_2 = new QLineEdit(centralwidget);
         lineEdit_2->setObjectName(QString::fromUtf8("lineEdit_2"));
         lineEdit_2->setGeometry(QRect(150, 125, 135, 32));
-        MainWindow->setCentralWidget(centralwidget);
-        menubar = new QMenuBar(MainWindow);
+        
+        this->setCentralWidget(centralwidget);
+        
+        menubar = new QMenuBar(this);
         menubar->setObjectName(QString::fromUtf8("menubar"));
         menubar->setGeometry(QRect(0, 0, 800, 30));
         menuHelp = new QMenu(menubar);
         menuHelp->setObjectName(QString::fromUtf8("menuHelp"));
-        MainWindow->setMenuBar(menubar);
-        statusbar = new QStatusBar(MainWindow);
+        this->setMenuBar(menubar);
+        statusbar = new QStatusBar(this);
         statusbar->setObjectName(QString::fromUtf8("statusbar"));
-        MainWindow->setStatusBar(statusbar);
+        this->setStatusBar(statusbar);
 
         menubar->addAction(menuHelp->menuAction());
         menuHelp->addAction(actionAbout);
 
-        retranslateUi(MainWindow);
+        //retranslateUi(this);
 
-        QMetaObject::connectSlotsByName(MainWindow);
+        QMetaObject::connectSlotsByName(this);
     } // setupUi
 
+    Cplot::~Cplot()
+    {
+        
+    }
 
+/*
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "Cplot", nullptr));
@@ -345,18 +354,18 @@ Cplot::Cplot(QWidget *parent)
         pushButton->setText(QCoreApplication::translate("MainWindow", "PushButton", nullptr));
         menuHelp->setTitle(QCoreApplication::translate("MainWindow", "Help", nullptr));
     } // retranslateUi
-
+*/
     //, ui(new Ui::MainWindow)
 /*
 {
     ui->setupUi(this);
 }
 */
-
+/*
 
 Cplot::~Cplot()
 {
     delete ui;
 }
 
-QT_END_NAMESPACE
+*/

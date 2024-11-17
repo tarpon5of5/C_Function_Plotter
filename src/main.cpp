@@ -35,19 +35,16 @@ SOFTWARE.
 #include "Cplot.h"
 
 #include <QApplication>
-#include <QDialog>
 
-int main(int argc, char *argv[])
+int main(int argc, char *argv[]) // argc and argv are here to allow command line input.
 {
     QApplication app(argc, argv);
-    QApplication::setWindowIcon(QIcon::fromTheme(QStringLiteral("Cplot")));
-    
+    QApplication::setWindowIcon(QIcon::fromTheme(QStringLiteral("Cplot"))); 
+    // This sets the window icon. It is asuming that the apropriate icon is named "Cplot"
     //add some stuff here
     
-    Cplot w;
-    w.show();
-
-    //Qdialog();
+    Cplot window; //Creates a window.
+    window.show(); //Shows the window.
 
     return app.exec();
 }
