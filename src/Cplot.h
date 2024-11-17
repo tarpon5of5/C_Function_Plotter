@@ -31,26 +31,54 @@ SOFTWARE.
 **********************************************************************************
 */
 
-#ifndef MAINWINDOW_H
-#define MAINWINDOW_H
+#ifndef CPLOT_H
+#define CPLOT_H
 
 #include <QMainWindow>
 
+
 QT_BEGIN_NAMESPACE
 namespace Ui {
-class MainWindow;
+class Cplot;
 }
 QT_END_NAMESPACE
 
-class MainWindow : public QMainWindow
+
+class Cplot : public QMainWindow
 {
     Q_OBJECT
 
 public:
-    MainWindow(QWidget *parent = nullptr);
-    ~MainWindow();
+    Cplot(QWidget *parent = nullptr);
+    ~Cplot();
+    QAction *actionAbout;
+    QWidget *centralwidget;
+    QWidget *horizontalLayoutWidget;
+    QHBoxLayout *horizontalLayout_2;
+    QPushButton *pushButton_4;
+    QPushButton *pushButton_3;
+    QPushButton *pushButton_5;
+    QPushButton *pushButton_2;
+    QPushButton *pushButton;
+    QWidget *verticalLayoutWidget_3;
+    QVBoxLayout *verticalLayout_3;
+    QLineEdit *lineEdit_7;
+    QLineEdit *lineEdit_9;
+    QLineEdit *lineEdit_8;
+    QWidget *verticalLayoutWidget_2;
+    QVBoxLayout *verticalLayout_2;
+    QLineEdit *lineEdit_4;
+    QLineEdit *lineEdit_6;
+    QLineEdit *lineEdit_5;
+    QLineEdit *lineEdit_3;
+    QLineEdit *lineEdit;
+    QLineEdit *lineEdit_2;
+    QMenuBar *menubar;
+    QMenu *menuHelp;
+    QStatusBar *statusbar;
 
 private:
-    Ui::MainWindow *ui;
+    Ui::Cplot *ui;
+
 };
 #endif // MAINWINDOW_H
