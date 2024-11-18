@@ -16,9 +16,7 @@ set(PROJECT_SOURCES
         src/main.cpp
         src/Cplot.cpp
         src/Cplot.h
-        src/mainwindow.ui
-       # src/ui_aboutwindow.h
-       # src/ui_mainwindow.h
+        #src/mainwindow.ui
         
 )
 

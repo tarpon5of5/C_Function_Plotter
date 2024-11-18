@@ -33,7 +33,6 @@ SOFTWARE.
 
 #include "Cplot.h"
 
-#include <QApplication>
 #include <QtCore/QVariant>
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
@@ -46,10 +45,148 @@ SOFTWARE.
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
-//#include "./ui_mainwindow.h"
 
-using namespace Qt;
 
+QT_BEGIN_NAMESPACE
+
+Cplot::Cplot(QWidget *parent)
+    : QMainWindow(parent)
+        {
+        
+        
+        if (this->objectName().isEmpty())
+            this->setObjectName(QString::fromUtf8("MainWindow"));
+               
+        resize(800, 600);
+        actionAbout = new QAction(this);
+        actionAbout->setObjectName(QString::fromUtf8("actionAbout"));
+        centralwidget = new QWidget(this);
+        centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
+        horizontalLayoutWidget = new QWidget(centralwidget);
+        horizontalLayoutWidget->setObjectName(QString::fromUtf8("horizontalLayoutWidget"));
+        horizontalLayoutWidget->setGeometry(QRect(6, 6, 466, 36));
+        horizontalLayout_2 = new QHBoxLayout(horizontalLayoutWidget);
+        horizontalLayout_2->setObjectName(QString::fromUtf8("horizontalLayout_2"));
+        horizontalLayout_2->setContentsMargins(0, 0, 0, 0);
+        pushButton_4 = new QPushButton(horizontalLayoutWidget);
+        pushButton_4->setObjectName(QString::fromUtf8("pushButton_4"));
+
+        horizontalLayout_2->addWidget(pushButton_4);
+
+        pushButton_3 = new QPushButton(horizontalLayoutWidget);
+        pushButton_3->setObjectName(QString::fromUtf8("pushButton_3"));
+
+        horizontalLayout_2->addWidget(pushButton_3);
+
+        pushButton_5 = new QPushButton(horizontalLayoutWidget);
+        pushButton_5->setObjectName(QString::fromUtf8("pushButton_5"));
+
+        horizontalLayout_2->addWidget(pushButton_5);
+
+        pushButton_2 = new QPushButton(horizontalLayoutWidget);
+        pushButton_2->setObjectName(QString::fromUtf8("pushButton_2"));
+
+        horizontalLayout_2->addWidget(pushButton_2);
+
+        pushButton = new QPushButton(horizontalLayoutWidget);
+        pushButton->setObjectName(QString::fromUtf8("pushButton"));
+
+        horizontalLayout_2->addWidget(pushButton);
+
+        verticalLayoutWidget_3 = new QWidget(centralwidget);
+        verticalLayoutWidget_3->setObjectName(QString::fromUtf8("verticalLayoutWidget_3"));
+        verticalLayoutWidget_3->setGeometry(QRect(310, 60, 137, 110));
+        verticalLayout_3 = new QVBoxLayout(verticalLayoutWidget_3);
+        verticalLayout_3->setObjectName(QString::fromUtf8("verticalLayout_3"));
+        verticalLayout_3->setContentsMargins(0, 0, 0, 0);
+        lineEdit_7 = new QLineEdit(verticalLayoutWidget_3);
+        lineEdit_7->setObjectName(QString::fromUtf8("lineEdit_7"));
+
+        verticalLayout_3->addWidget(lineEdit_7);
+
+        lineEdit_9 = new QLineEdit(verticalLayoutWidget_3);
+        lineEdit_9->setObjectName(QString::fromUtf8("lineEdit_9"));
+
+        verticalLayout_3->addWidget(lineEdit_9);
+
+        lineEdit_8 = new QLineEdit(verticalLayoutWidget_3);
+        lineEdit_8->setObjectName(QString::fromUtf8("lineEdit_8"));
+
+        verticalLayout_3->addWidget(lineEdit_8);
+
+        verticalLayoutWidget_2 = new QWidget(centralwidget);
+        verticalLayoutWidget_2->setObjectName(QString::fromUtf8("verticalLayoutWidget_2"));
+        verticalLayoutWidget_2->setGeometry(QRect(6, 48, 137, 110));
+        verticalLayout_2 = new QVBoxLayout(verticalLayoutWidget_2);
+        verticalLayout_2->setObjectName(QString::fromUtf8("verticalLayout_2"));
+        verticalLayout_2->setContentsMargins(0, 0, 0, 0);
+        lineEdit_4 = new QLineEdit(verticalLayoutWidget_2);
+        lineEdit_4->setObjectName(QString::fromUtf8("lineEdit_4"));
+
+        verticalLayout_2->addWidget(lineEdit_4);
+
+        lineEdit_6 = new QLineEdit(verticalLayoutWidget_2);
+        lineEdit_6->setObjectName(QString::fromUtf8("lineEdit_6"));
+
+        verticalLayout_2->addWidget(lineEdit_6);
+
+        lineEdit_5 = new QLineEdit(verticalLayoutWidget_2);
+        lineEdit_5->setObjectName(QString::fromUtf8("lineEdit_5"));
+
+        verticalLayout_2->addWidget(lineEdit_5);
+
+        lineEdit_3 = new QLineEdit(centralwidget);
+        lineEdit_3->setObjectName(QString::fromUtf8("lineEdit_3"));
+        lineEdit_3->setGeometry(QRect(150, 87, 135, 32));
+        lineEdit = new QLineEdit(centralwidget);
+        lineEdit->setObjectName(QString::fromUtf8("lineEdit"));
+        lineEdit->setGeometry(QRect(150, 49, 135, 32));
+        lineEdit_2 = new QLineEdit(centralwidget);
+        lineEdit_2->setObjectName(QString::fromUtf8("lineEdit_2"));
+        lineEdit_2->setGeometry(QRect(150, 125, 135, 32));
+        
+        this->setCentralWidget(centralwidget);
+        
+        menubar = new QMenuBar(this);
+        menubar->setObjectName(QString::fromUtf8("menubar"));
+        menubar->setGeometry(QRect(0, 0, 800, 30));
+        menuHelp = new QMenu(menubar);
+        menuHelp->setObjectName(QString::fromUtf8("menuHelp"));
+        this->setMenuBar(menubar);
+        statusbar = new QStatusBar(this);
+        statusbar->setObjectName(QString::fromUtf8("statusbar"));
+        this->setStatusBar(statusbar);
+
+        menubar->addAction(menuHelp->menuAction());
+        menuHelp->addAction(actionAbout);
+
+    void retranslateUi(QMainWindow *MainWindow);
+    {
+        this->setWindowTitle(QCoreApplication::translate("MainWindow", "Cplot", nullptr));
+        actionAbout->setText(QCoreApplication::translate("MainWindow", "About", nullptr));
+        pushButton_4->setText(QCoreApplication::translate("MainWindow", "PushButton", nullptr));
+        pushButton_3->setText(QCoreApplication::translate("MainWindow", "PushButton", nullptr));
+        pushButton_5->setText(QCoreApplication::translate("MainWindow", "PushButton", nullptr));
+        pushButton_2->setText(QCoreApplication::translate("MainWindow", "PushButton", nullptr));
+        pushButton->setText(QCoreApplication::translate("MainWindow", "PushButton", nullptr));
+        menuHelp->setTitle(QCoreApplication::translate("MainWindow", "Help", nullptr));
+        }; // retranslateUi
+
+        QMetaObject::connectSlotsByName(this);
+    } // setupUi
+
+    Cplot::~Cplot()
+    {
+        //This used to say "delete ui;"
+
+    }
+
+QT_END_NAMESPACE
+
+
+
+
+//Original code created by QT designer:
 
 
 /*
@@ -215,139 +352,3 @@ namespace Ui {
 
 QT_END_NAMESPACE
 */
-
-
-Cplot::Cplot(QWidget *parent)
-    : QMainWindow(parent)
-        {
-        
-        /*
-        if (MainWindow->objectName().isEmpty())
-            MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
-        */
-        //ui(new Ui::MainWindow);
-        //ui->setupUi;
-        //experiment needs work.
-        /*MainWindow->*/resize(800, 600);
-        actionAbout = new QAction(this);
-        actionAbout->setObjectName(QString::fromUtf8("actionAbout"));
-        centralwidget = new QWidget(this);
-        centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
-        horizontalLayoutWidget = new QWidget(centralwidget);
-        horizontalLayoutWidget->setObjectName(QString::fromUtf8("horizontalLayoutWidget"));
-        horizontalLayoutWidget->setGeometry(QRect(6, 6, 466, 36));
-        horizontalLayout_2 = new QHBoxLayout(horizontalLayoutWidget);
-        horizontalLayout_2->setObjectName(QString::fromUtf8("horizontalLayout_2"));
-        horizontalLayout_2->setContentsMargins(0, 0, 0, 0);
-        pushButton_4 = new QPushButton(horizontalLayoutWidget);
-        pushButton_4->setObjectName(QString::fromUtf8("pushButton_4"));
-
-        horizontalLayout_2->addWidget(pushButton_4);
-
-        pushButton_3 = new QPushButton(horizontalLayoutWidget);
-        pushButton_3->setObjectName(QString::fromUtf8("pushButton_3"));
-
-        horizontalLayout_2->addWidget(pushButton_3);
-
-        pushButton_5 = new QPushButton(horizontalLayoutWidget);
-        pushButton_5->setObjectName(QString::fromUtf8("pushButton_5"));
-
-        horizontalLayout_2->addWidget(pushButton_5);
-
-        pushButton_2 = new QPushButton(horizontalLayoutWidget);
-        pushButton_2->setObjectName(QString::fromUtf8("pushButton_2"));
-
-        horizontalLayout_2->addWidget(pushButton_2);
-
-        pushButton = new QPushButton(horizontalLayoutWidget);
-        pushButton->setObjectName(QString::fromUtf8("pushButton"));
-
-        horizontalLayout_2->addWidget(pushButton);
-
-        verticalLayoutWidget_3 = new QWidget(centralwidget);
-        verticalLayoutWidget_3->setObjectName(QString::fromUtf8("verticalLayoutWidget_3"));
-        verticalLayoutWidget_3->setGeometry(QRect(310, 60, 137, 110));
-        verticalLayout_3 = new QVBoxLayout(verticalLayoutWidget_3);
-        verticalLayout_3->setObjectName(QString::fromUtf8("verticalLayout_3"));
-        verticalLayout_3->setContentsMargins(0, 0, 0, 0);
-        lineEdit_7 = new QLineEdit(verticalLayoutWidget_3);
-        lineEdit_7->setObjectName(QString::fromUtf8("lineEdit_7"));
-
-        verticalLayout_3->addWidget(lineEdit_7);
-
-        lineEdit_9 = new QLineEdit(verticalLayoutWidget_3);
-        lineEdit_9->setObjectName(QString::fromUtf8("lineEdit_9"));
-
-        verticalLayout_3->addWidget(lineEdit_9);
-
-        lineEdit_8 = new QLineEdit(verticalLayoutWidget_3);
-        lineEdit_8->setObjectName(QString::fromUtf8("lineEdit_8"));
-
-        verticalLayout_3->addWidget(lineEdit_8);
-
-        verticalLayoutWidget_2 = new QWidget(centralwidget);
-        verticalLayoutWidget_2->setObjectName(QString::fromUtf8("verticalLayoutWidget_2"));
-        verticalLayoutWidget_2->setGeometry(QRect(6, 48, 137, 110));
-        verticalLayout_2 = new QVBoxLayout(verticalLayoutWidget_2);
-        verticalLayout_2->setObjectName(QString::fromUtf8("verticalLayout_2"));
-        verticalLayout_2->setContentsMargins(0, 0, 0, 0);
-        lineEdit_4 = new QLineEdit(verticalLayoutWidget_2);
-        lineEdit_4->setObjectName(QString::fromUtf8("lineEdit_4"));
-
-        verticalLayout_2->addWidget(lineEdit_4);
-
-        lineEdit_6 = new QLineEdit(verticalLayoutWidget_2);
-        lineEdit_6->setObjectName(QString::fromUtf8("lineEdit_6"));
-
-        verticalLayout_2->addWidget(lineEdit_6);
-
-        lineEdit_5 = new QLineEdit(verticalLayoutWidget_2);
-        lineEdit_5->setObjectName(QString::fromUtf8("lineEdit_5"));
-
-        verticalLayout_2->addWidget(lineEdit_5);
-
-        lineEdit_3 = new QLineEdit(centralwidget);
-        lineEdit_3->setObjectName(QString::fromUtf8("lineEdit_3"));
-        lineEdit_3->setGeometry(QRect(150, 87, 135, 32));
-        lineEdit = new QLineEdit(centralwidget);
-        lineEdit->setObjectName(QString::fromUtf8("lineEdit"));
-        lineEdit->setGeometry(QRect(150, 49, 135, 32));
-        lineEdit_2 = new QLineEdit(centralwidget);
-        lineEdit_2->setObjectName(QString::fromUtf8("lineEdit_2"));
-        lineEdit_2->setGeometry(QRect(150, 125, 135, 32));
-        
-        this->setCentralWidget(centralwidget);
-        
-        menubar = new QMenuBar(this);
-        menubar->setObjectName(QString::fromUtf8("menubar"));
-        menubar->setGeometry(QRect(0, 0, 800, 30));
-        menuHelp = new QMenu(menubar);
-        menuHelp->setObjectName(QString::fromUtf8("menuHelp"));
-        this->setMenuBar(menubar);
-        statusbar = new QStatusBar(this);
-        statusbar->setObjectName(QString::fromUtf8("statusbar"));
-        this->setStatusBar(statusbar);
-
-        menubar->addAction(menuHelp->menuAction());
-        menuHelp->addAction(actionAbout);
-
-    void retranslateUi(QMainWindow *MainWindow);
-    {
-        this->setWindowTitle(QCoreApplication::translate("MainWindow", "Cplot", nullptr));
-        actionAbout->setText(QCoreApplication::translate("MainWindow", "About", nullptr));
-        pushButton_4->setText(QCoreApplication::translate("MainWindow", "PushButton", nullptr));
-        pushButton_3->setText(QCoreApplication::translate("MainWindow", "PushButton", nullptr));
-        pushButton_5->setText(QCoreApplication::translate("MainWindow", "PushButton", nullptr));
-        pushButton_2->setText(QCoreApplication::translate("MainWindow", "PushButton", nullptr));
-        pushButton->setText(QCoreApplication::translate("MainWindow", "PushButton", nullptr));
-        menuHelp->setTitle(QCoreApplication::translate("MainWindow", "Help", nullptr));
-        }; // retranslateUi
-
-        QMetaObject::connectSlotsByName(this);
-    } // setupUi
-
-    Cplot::~Cplot()
-    {
-        //This used to say "delete ui;"
-
-    }
