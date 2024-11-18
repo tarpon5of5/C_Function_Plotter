@@ -32,7 +32,6 @@ SOFTWARE.
 */
 
 #include "Cplot.h"
-
 #include <QtCore/QVariant>
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
