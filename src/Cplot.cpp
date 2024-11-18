@@ -219,7 +219,6 @@ QT_END_NAMESPACE
 
 Cplot::Cplot(QWidget *parent)
     : QMainWindow(parent)
-        
         {
         
         /*
@@ -332,20 +331,9 @@ Cplot::Cplot(QWidget *parent)
         menubar->addAction(menuHelp->menuAction());
         menuHelp->addAction(actionAbout);
 
-        //retranslateUi(this);
-
-        QMetaObject::connectSlotsByName(this);
-    } // setupUi
-
-    Cplot::~Cplot()
+    void retranslateUi(QMainWindow *MainWindow);
     {
-        
-    }
-
-/*
-    void retranslateUi(QMainWindow *MainWindow)
-    {
-        MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "Cplot", nullptr));
+        this->setWindowTitle(QCoreApplication::translate("MainWindow", "Cplot", nullptr));
         actionAbout->setText(QCoreApplication::translate("MainWindow", "About", nullptr));
         pushButton_4->setText(QCoreApplication::translate("MainWindow", "PushButton", nullptr));
         pushButton_3->setText(QCoreApplication::translate("MainWindow", "PushButton", nullptr));
@@ -353,19 +341,13 @@ Cplot::Cplot(QWidget *parent)
         pushButton_2->setText(QCoreApplication::translate("MainWindow", "PushButton", nullptr));
         pushButton->setText(QCoreApplication::translate("MainWindow", "PushButton", nullptr));
         menuHelp->setTitle(QCoreApplication::translate("MainWindow", "Help", nullptr));
-    } // retranslateUi
-*/
-    //, ui(new Ui::MainWindow)
-/*
-{
-    ui->setupUi(this);
-}
-*/
-/*
+        }; // retranslateUi
 
-Cplot::~Cplot()
-{
-    delete ui;
-}
+        QMetaObject::connectSlotsByName(this);
+    } // setupUi
 
-*/
+    Cplot::~Cplot()
+    {
+        //This used to say "delete ui;"
+
+    }

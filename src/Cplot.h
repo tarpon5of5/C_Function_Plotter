@@ -107,10 +107,12 @@ private:
     QMenu *menuHelp;
     QStatusBar *statusbar;
     
+    // Junk code I probably don't need anymore.
+    // void retranslateUi(QMainWindow *Mainwindow);
     /*
     Ui::Cplot *ui;
     */
 
 };
 
-#endif // MAINWINDOW_H
+#endif
