@@ -4,7 +4,7 @@
 Author: Tarpon Thompson
 Date: November 2024
 
-This software is distributed under the MIT license.
+This software is distributed under the MIT license:
 
 MIT License
 
@@ -78,10 +78,19 @@ public:
     Cplot(QWidget *parent = nullptr);
     ~Cplot();
 
-    
+
+private slots:
+    //void newInstance();
+    void actionQuitClicked();
+    //...
+
 
 private:
+    void createActions();
+    void createMenus();
+    
     QAction *actionAbout;
+    QAction *actionQuit;
     QWidget *centralwidget;
     QWidget *horizontalLayoutWidget;
     QHBoxLayout *horizontalLayout_2;
@@ -105,8 +114,9 @@ private:
     QLineEdit *lineEdit_2;
     QMenuBar *menubar;
     QMenu *menuHelp;
+    QMenu *menuFile;
     QStatusBar *statusbar;
-    
+
     // Junk code I probably don't need anymore.
     // void retranslateUi(QMainWindow *Mainwindow);
     /*

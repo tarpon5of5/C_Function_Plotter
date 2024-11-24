@@ -44,21 +44,33 @@ SOFTWARE.
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
+#include <QIcon>
 
 
 QT_BEGIN_NAMESPACE
 
 Cplot::Cplot(QWidget *parent)
     : QMainWindow(parent)
-        {
+    {
         
         
         if (this->objectName().isEmpty())
             this->setObjectName(QString::fromUtf8("MainWindow"));
-               
+        setMinimumSize(400, 300);       
         resize(800, 600);
+
+/*______Actions_are_here!____________________________________________________________________________________________
+
         actionAbout = new QAction(this);
         actionAbout->setObjectName(QString::fromUtf8("actionAbout"));
+
+        actionQuit = new QAction(tr("Quit"), this);
+        actionQuit->setObjectName(QString::fromUtf8("actionQuit"));
+*/
+/*______Centeral_Widget_layout_is_here!______________________________________________________________________________*/
+
+        createActions();
+
         centralwidget = new QWidget(this);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         horizontalLayoutWidget = new QWidget(centralwidget);
@@ -95,6 +107,8 @@ Cplot::Cplot(QWidget *parent)
         verticalLayoutWidget_3 = new QWidget(centralwidget);
         verticalLayoutWidget_3->setObjectName(QString::fromUtf8("verticalLayoutWidget_3"));
         verticalLayoutWidget_3->setGeometry(QRect(310, 60, 137, 110));
+        
+
         verticalLayout_3 = new QVBoxLayout(verticalLayoutWidget_3);
         verticalLayout_3->setObjectName(QString::fromUtf8("verticalLayout_3"));
         verticalLayout_3->setContentsMargins(0, 0, 0, 0);
@@ -145,40 +159,111 @@ Cplot::Cplot(QWidget *parent)
         lineEdit_2->setGeometry(QRect(150, 125, 135, 32));
         
         this->setCentralWidget(centralwidget);
-        
+
+/*______Menu_Stuff_is_here!__________________________________________________________________________________________
+    
         menubar = new QMenuBar(this);
         menubar->setObjectName(QString::fromUtf8("menubar"));
         menubar->setGeometry(QRect(0, 0, 800, 30));
+
+        menuFile =new QMenu(menubar);
+        menuFile->setObjectName(QString::fromUtf8("menufile"));
+
         menuHelp = new QMenu(menubar);
         menuHelp->setObjectName(QString::fromUtf8("menuHelp"));
         this->setMenuBar(menubar);
+
+        menubar->addAction(menuFile->menuAction());
+        menuFile->addAction(actionQuit);
+        
+        menubar->addAction(menuHelp->menuAction());
+        menuHelp->addAction(actionAbout);
+*/
+
+/*______Status_bar_setuo_is_here!____________________________________________________________________________________*/
+        
+        createMenus();
+
         statusbar = new QStatusBar(this);
         statusbar->setObjectName(QString::fromUtf8("statusbar"));
         this->setStatusBar(statusbar);
+       
 
-        menubar->addAction(menuHelp->menuAction());
-        menuHelp->addAction(actionAbout);
+        QMetaObject::connectSlotsByName(this);
+        //QObject::connect(actionQuit, SIGNAL clicked()); //This gave errors
+        //connect(actionQuit, SIGNAL (mousePressEvent()), this, SLOT (actionQuitClicked()));
 
     void retranslateUi(QMainWindow *MainWindow);
     {
         this->setWindowTitle(QCoreApplication::translate("MainWindow", "Cplot", nullptr));
         actionAbout->setText(QCoreApplication::translate("MainWindow", "About", nullptr));
+        actionQuit->setText(QCoreApplication::translate("MainWindow", "Quit", nullptr));
+
         pushButton_4->setText(QCoreApplication::translate("MainWindow", "PushButton", nullptr));
         pushButton_3->setText(QCoreApplication::translate("MainWindow", "PushButton", nullptr));
         pushButton_5->setText(QCoreApplication::translate("MainWindow", "PushButton", nullptr));
         pushButton_2->setText(QCoreApplication::translate("MainWindow", "PushButton", nullptr));
         pushButton->setText(QCoreApplication::translate("MainWindow", "PushButton", nullptr));
+        
+        
+        menuFile->setTitle(QCoreApplication::translate("Mainwindow", "File", nullptr));
         menuHelp->setTitle(QCoreApplication::translate("MainWindow", "Help", nullptr));
         }; // retranslateUi
 
         QMetaObject::connectSlotsByName(this);
     } // setupUi
 
-    Cplot::~Cplot()
+/*______Menu_Items___________________________________________________________________________________________________*/
+void Cplot::createMenus()
+{
+    menubar = new QMenuBar(this);
+    menubar->setObjectName(QString::fromUtf8("menubar"));
+    menubar->setGeometry(QRect(0, 0, 800, 30));
+
+    menuFile =new QMenu(menubar);
+    menuFile->setObjectName(QString::fromUtf8("menufile"));
+
+    menuHelp = new QMenu(menubar);
+    menuHelp->setObjectName(QString::fromUtf8("menuHelp"));
+    this->setMenuBar(menubar);
+
+    menubar->addAction(menuFile->menuAction());
+    menuFile->addAction(actionQuit);
+        
+    menubar->addAction(menuHelp->menuAction());
+    menuHelp->addAction(actionAbout);
+}
+
+/*
+/*__Application_Actions_____________________________________________________________________________________________*/
+void Cplot::createActions()
+{
+    actionAbout = new QAction(this);
+    //actionAbout = new QAction(QIcon::fromTheme(QIcon))
+    actionAbout->setObjectName(QString::fromUtf8("actionAbout"));
+
+    actionQuit = new QAction(tr("Quit"), this);
+    actionQuit->setObjectName(QString::fromUtf8("actionQuit"));
+}
+
+
+Cplot::~Cplot()
     {
         //This used to say "delete ui;"
 
     }
+
+void Cplot::actionQuitClicked()
+{
+    QApplication::quit();
+}
+
+/*
+QAction *quit(const QObject *recvr, const char *slot, QObject *parent)
+{
+    return KStandardAction::create(Quit, recvr, slot, parent);
+}
+*/
 
 QT_END_NAMESPACE
 
