@@ -238,22 +238,39 @@ void Cplot::createMenus()
 /*__Application_Actions_____________________________________________________________________________________________*/
 void Cplot::createActions()
 {
-    actionAbout = new QAction(this);
-    //actionAbout = new QAction(QIcon::fromTheme(QIcon))
-    actionAbout->setObjectName(QString::fromUtf8("actionAbout"));
+    //File
+    
+    //File/Save
 
+    //File/Export
+
+    //File/Quit
     actionQuit = new QAction(tr("Quit"), this);
     actionQuit->setObjectName(QString::fromUtf8("actionQuit"));
+    actionQuit->setShortcuts(QKeySequence::Quit);
+    actionQuit->setIcon(QIcon::fromTheme(QString("application-exit")));
+
+    //Help
+
+    //Help/User Manual
+
+    //Help/About CPlot
+    actionAbout = new QAction(tr("About CPlot"), this);
+    actionAbout->setObjectName(QString::fromUtf8("actionAbout"));
+    actionAbout->setIcon(QIcon::fromTheme(QString("help-about")));
+
+    
+    connect(actionQuit, &QAction::triggered, this, &Cplot::quit);
 }
 
 
 Cplot::~Cplot()
     {
-        //This used to say "delete ui;"
+        //delete ui;
 
     }
 
-void Cplot::actionQuitClicked()
+void Cplot::quit()
 {
     QApplication::quit();
 }

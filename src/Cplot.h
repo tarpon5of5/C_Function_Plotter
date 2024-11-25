@@ -77,11 +77,11 @@ class Cplot : public QMainWindow
 public:
     Cplot(QWidget *parent = nullptr);
     ~Cplot();
-
+    //Cplot *ui;
 
 private slots:
     //void newInstance();
-    void actionQuitClicked();
+    void quit();
     //...
 
 
@@ -119,9 +119,9 @@ private:
 
     // Junk code I probably don't need anymore.
     // void retranslateUi(QMainWindow *Mainwindow);
-    /*
-    Ui::Cplot *ui;
-    */
+    
+    /*Ui::*///Cplot *ui;
+    
 
 };
 
