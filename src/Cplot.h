@@ -92,6 +92,37 @@ private:
     QAction *actionAbout;
     QAction *actionQuit;
     QWidget *centralwidget;
+    QGridLayout *gridLayout;
+
+    QLineEdit *y1_input;
+    /*
+    QPushButton *eval_fns_btn;
+    QPushButton *zoom_out_btn;
+    QLabel *y2_label;
+    QLabel *y_max_label;
+    QPushButton *zoom_reset_btn;
+    QPushButton *plot_fns_btn;
+    QLabel *x_min_label;
+    QPushButton *zoom_in_btn;
+    QLineEdit *y_max_input;
+    QLabel *y_min_label;
+    QLineEdit *y_min_input;
+    QWidget *Graph;
+    QLabel *y3_label;
+    QLineEdit *x_max_input;
+    QLineEdit *y3_input;
+    QLineEdit *x_min_input;
+    QLineEdit *y2_input;
+    QLabel *x_max_label;
+    QLabel *y1_label;
+    QMenuBar *menubar;
+    QMenu *menuFile;
+    QMenu *menuGraph;
+    QMenu *menuScale_Style;
+    QMenu *menuHelp;
+    QStatusBar *statusbar;
+*/
+/*
     QWidget *horizontalLayoutWidget;
     QHBoxLayout *horizontalLayout_2;
     QPushButton *pushButton_4;
@@ -112,10 +143,61 @@ private:
     QLineEdit *lineEdit_3;
     QLineEdit *lineEdit;
     QLineEdit *lineEdit_2;
+*/
+
     QMenuBar *menubar;
     QMenu *menuHelp;
     QMenu *menuFile;
     QStatusBar *statusbar;
+
+/*
+public:
+    QAction *actionQuit;
+    QAction *actionSave;
+    QAction *actionPlot;
+    QAction *actionEvaluate;
+    QAction *actionContents;
+    QAction *actionAbout;
+    QAction *actionZoom_In;
+    QAction *actionZoom_Out;
+    QAction *actionZoom_Reset;
+    QAction *actionConnect_Points;
+    QAction *actionDecimal;
+    QAction *actionRadians;
+    QAction *actionRadians_2;
+    QAction *actionCustom;
+    QAction *actionExport_Resolution;
+    QWidget *centralwidget;
+    QGridLayout *gridLayout;
+    QLineEdit *y1_input;
+    QPushButton *eval_fns_btn;
+    QPushButton *zoom_out_btn;
+    QLabel *y2_label;
+    QLabel *y_max_label;
+    QPushButton *zoom_reset_btn;
+    QPushButton *plot_fns_btn;
+    QLabel *x_min_label;
+    QPushButton *zoom_in_btn;
+    QLineEdit *y_max_input;
+    QLabel *y_min_label;
+    QLineEdit *y_min_input;
+    QWidget *Graph;
+    QLabel *y3_label;
+    QLineEdit *x_max_input;
+    QLineEdit *y3_input;
+    QLineEdit *x_min_input;
+    QLineEdit *y2_input;
+    QLabel *x_max_label;
+    QLabel *y1_label;
+    QMenuBar *menubar;
+    QMenu *menuFile;
+    QMenu *menuGraph;
+    QMenu *menuScale_Style;
+    QMenu *menuHelp;
+    QStatusBar *statusbar;
+
+*/
+
 
     // Junk code I probably don't need anymore.
     // void retranslateUi(QMainWindow *Mainwindow);

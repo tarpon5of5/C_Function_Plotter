@@ -1,4 +1,4 @@
-# C++ Function Plotter
+# CPlot
 
 <mark> Add a screenshot of application here
 
