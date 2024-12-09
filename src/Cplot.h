@@ -89,13 +89,29 @@ private:
     void createActions();
     void createMenus();
     
-    QAction *actionAbout;
     QAction *actionQuit;
+    QAction *actionSave;
+    QAction *actionPlot;
+    QAction *actionEvaluate;
+    QAction *actionContents;
+    QAction *actionAbout;
+    QAction *actionZoom_In;
+    QAction *actionZoom_Out;
+    QAction *actionZoom_Reset;
+    QAction *actionConnect_Points;
+    QAction *actionDecimal;
+    QAction *actionRadians;
+    QAction *actionRadians_2;
+    QAction *actionCustom;
+    QAction *actionExport_Resolution;
+
+    
     QWidget *centralwidget;
+    
     QGridLayout *gridLayout;
 
     QLineEdit *y1_input;
-    /*
+    
     QPushButton *eval_fns_btn;
     QPushButton *zoom_out_btn;
     QLabel *y2_label;
@@ -115,7 +131,7 @@ private:
     QLineEdit *y2_input;
     QLabel *x_max_label;
     QLabel *y1_label;
-    QMenuBar *menubar;
+/*    QMenuBar *menubar;
     QMenu *menuFile;
     QMenu *menuGraph;
     QMenu *menuScale_Style;
@@ -148,6 +164,9 @@ private:
     QMenuBar *menubar;
     QMenu *menuHelp;
     QMenu *menuFile;
+    QMenu *menuGraph;
+    QMenu *menuScale_Style;
+
     QStatusBar *statusbar;
 
 /*
