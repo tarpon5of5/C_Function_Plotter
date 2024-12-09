@@ -59,16 +59,16 @@ SOFTWARE.
 
 
 
-/*
-QT_BEGIN_NAMESPACE
 
+//QT_BEGIN_NAMESPACE
+/*
 namespace Ui 
 {
 class Cplot;
 }
-
-QT_END_NAMESPACE
 */
+//QT_END_NAMESPACE
+
 
 class Cplot : public QMainWindow
 {
@@ -77,21 +77,100 @@ class Cplot : public QMainWindow
 public:
     Cplot(QWidget *parent = nullptr);
     ~Cplot();
-    Cplot *ui;
+    //Cplot *ui;
 
-    void retranslateUi(QMainWindow *Mainwindow);
-    
-/*
 private slots:
     //void newInstance();
-//    void quit();
+    void quit();
     //...
-*/
+
 
 private:
- //   void createActions();
- //   void createMenus();
+    void createActions();
+    void createMenus();
+/*    
+    QAction *actionQuit;
+    QAction *actionSave;
+    QAction *actionPlot;
+    QAction *actionEvaluate;
+    QAction *actionContents;
+    QAction *actionAbout;
+    QAction *actionZoom_In;
+    QAction *actionZoom_Out;
+    QAction *actionZoom_Reset;
+    QAction *actionConnect_Points;
+    QAction *actionDecimal;
+    QAction *actionRadians;
+    QAction *actionRadians_2;
+    QAction *actionCustom;
+    QAction *actionExport_Resolution;
 
+    
+    QWidget *centralwidget;
+    
+    QGridLayout *gridLayout;
+
+    QLineEdit *y1_input;
+    
+    QPushButton *eval_fns_btn;
+    QPushButton *zoom_out_btn;
+    QLabel *y2_label;
+    QLabel *y_max_label;
+    QPushButton *zoom_reset_btn;
+    QPushButton *plot_fns_btn;
+    QLabel *x_min_label;
+    QPushButton *zoom_in_btn;
+    QLineEdit *y_max_input;
+    QLabel *y_min_label;
+    QLineEdit *y_min_input;
+    QWidget *Graph;
+    QLabel *y3_label;
+    QLineEdit *x_max_input;
+    QLineEdit *y3_input;
+    QLineEdit *x_min_input;
+    QLineEdit *y2_input;
+    QLabel *x_max_label;
+    QLabel *y1_label;
+/*    QMenuBar *menubar;
+    QMenu *menuFile;
+    QMenu *menuGraph;
+    QMenu *menuScale_Style;
+    QMenu *menuHelp;
+    QStatusBar *statusbar;
+*/
+/*
+    QWidget *horizontalLayoutWidget;
+    QHBoxLayout *horizontalLayout_2;
+    QPushButton *pushButton_4;
+    QPushButton *pushButton_3;
+    QPushButton *pushButton_5;
+    QPushButton *pushButton_2;
+    QPushButton *pushButton;
+    QWidget *verticalLayoutWidget_3;
+    QVBoxLayout *verticalLayout_3;
+    QLineEdit *lineEdit_7;
+    QLineEdit *lineEdit_9;
+    QLineEdit *lineEdit_8;
+    QWidget *verticalLayoutWidget_2;
+    QVBoxLayout *verticalLayout_2;
+    QLineEdit *lineEdit_4;
+    QLineEdit *lineEdit_6;
+    QLineEdit *lineEdit_5;
+    QLineEdit *lineEdit_3;
+    QLineEdit *lineEdit;
+    QLineEdit *lineEdit_2;
+
+
+    QMenuBar *menubar;
+    QMenu *menuHelp;
+    QMenu *menuFile;
+    QMenu *menuGraph;
+    QMenu *menuScale_Style;
+
+    QStatusBar *statusbar;
+*/
+
+public:
     QAction *actionQuit;
     QAction *actionSave;
     QAction *actionPlot;
@@ -140,7 +219,7 @@ private:
 
 
     // Junk code I probably don't need anymore.
- //   void retranslateUi(QMainWindow *Mainwindow);
+    // void retranslateUi(QMainWindow *Mainwindow);
     
     /*Ui::*///Cplot *ui;
     

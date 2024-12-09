@@ -52,406 +52,47 @@ QT_BEGIN_NAMESPACE
 Cplot::Cplot(QWidget *parent)
     : QMainWindow(parent)
     {
-        
-        
         if (this->objectName().isEmpty())
             this->setObjectName(QString::fromUtf8("MainWindow"));
-        setMinimumSize(400, 300);       
         resize(800, 600);
-
-/*______Actions_are_here!____________________________________________________________________________________________
-
-        actionAbout = new QAction(this);
-        actionAbout->setObjectName(QString::fromUtf8("actionAbout"));
-
-        actionQuit = new QAction(tr("Quit"), this);
-        actionQuit->setObjectName(QString::fromUtf8("actionQuit"));
-*/
-/*______Centeral_Widget_layout_is_here!______________________________________________________________________________*/
-
-        createActions();
-
-        centralwidget = new QWidget(this);
-        centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
-        
-        gridLayout = new QGridLayout(centralwidget);
-        gridLayout->setObjectName("gridLayout");
-
-        y1_input = new QLineEdit(centralwidget);
-        y1_input->setObjectName("y1_input");
-        y1_input->setMinimumSize(QSize(479, 0));
-
-        gridLayout->addWidget(y1_input, 2, 1, 1, 8);
-
-        eval_fns_btn = new QPushButton(centralwidget);
-        eval_fns_btn->setObjectName("eval_fns_btn");
-        eval_fns_btn->setMaximumSize(QSize(131, 16777215));
-
-        gridLayout->addWidget(eval_fns_btn, 0, 4, 1, 1);
-
-        zoom_out_btn = new QPushButton(centralwidget);
-        zoom_out_btn->setObjectName("zoom_out_btn");
-        zoom_out_btn->setMaximumSize(QSize(84, 16777215));
-
-        gridLayout->addWidget(zoom_out_btn, 0, 6, 1, 1);
-
-        y2_label = new QLabel(centralwidget);
-        y2_label->setObjectName("y2_label");
-        y2_label->setMaximumSize(QSize(29, 16777215));
-
-        gridLayout->addWidget(y2_label, 4, 0, 1, 1);
-
-        y_max_label = new QLabel(centralwidget);
-        y_max_label->setObjectName("y_max_label");
-        y_max_label->setMaximumSize(QSize(38, 16777215));
-
-        gridLayout->addWidget(y_max_label, 4, 11, 1, 1);
-
-        zoom_reset_btn = new QPushButton(centralwidget);
-        zoom_reset_btn->setObjectName("zoom_reset_btn");
-        zoom_reset_btn->setMaximumSize(QSize(89, 16777215));
-
-        gridLayout->addWidget(zoom_reset_btn, 0, 7, 1, 1);
-
-        plot_fns_btn = new QPushButton(centralwidget);
-        plot_fns_btn->setObjectName("plot_fns_btn");
-        plot_fns_btn->setMaximumSize(QSize(103, 16777215));
-
-        gridLayout->addWidget(plot_fns_btn, 0, 3, 1, 1);
-
-        x_min_label = new QLabel(centralwidget);
-        x_min_label->setObjectName("x_min_label");
-        x_min_label->setMaximumSize(QSize(38, 16777215));
-
-        gridLayout->addWidget(x_min_label, 2, 9, 1, 1);
-
-        zoom_in_btn = new QPushButton(centralwidget);
-        zoom_in_btn->setObjectName("zoom_in_btn");
-        zoom_in_btn->setMaximumSize(QSize(84, 16777215));
-
-        gridLayout->addWidget(zoom_in_btn, 0, 5, 1, 1);
-
-        y_max_input = new QLineEdit(centralwidget);
-        y_max_input->setObjectName("y_max_input");
-        y_max_input->setMaximumSize(QSize(118, 16777215));
-
-        gridLayout->addWidget(y_max_input, 4, 12, 1, 1);
-
-        y_min_label = new QLabel(centralwidget);
-        y_min_label->setObjectName("y_min_label");
-        y_min_label->setMaximumSize(QSize(38, 16777215));
-
-        gridLayout->addWidget(y_min_label, 2, 11, 1, 1);
-
-        y_min_input = new QLineEdit(centralwidget);
-        y_min_input->setObjectName("y_min_input");
-        y_min_input->setMinimumSize(QSize(118, 0));
-        y_min_input->setMaximumSize(QSize(118, 16777215));
-
-        gridLayout->addWidget(y_min_input, 2, 12, 1, 1);
-
- 
-/*
-        horizontalLayoutWidget = new QWidget(centralwidget);
-        horizontalLayoutWidget->setObjectName(QString::fromUtf8("horizontalLayoutWidget"));
-       // horizontalLayoutWidget->setGeometry(QRect(6, 6, 466, 36));
-        horizontalLayout_2 = new QHBoxLayout(horizontalLayoutWidget);
-        horizontalLayout_2->setObjectName(QString::fromUtf8("horizontalLayout_2"));
-        horizontalLayout_2->setContentsMargins(0, 0, 0, 0);
-        pushButton_4 = new QPushButton(horizontalLayoutWidget);
-        pushButton_4->setObjectName(QString::fromUtf8("pushButton_4"));
-
-        horizontalLayout_2->addWidget(pushButton_4);
-
-        pushButton_3 = new QPushButton(horizontalLayoutWidget);
-        pushButton_3->setObjectName(QString::fromUtf8("pushButton_3"));
-
-        horizontalLayout_2->addWidget(pushButton_3);
-
-        pushButton_5 = new QPushButton(horizontalLayoutWidget);
-        pushButton_5->setObjectName(QString::fromUtf8("pushButton_5"));
-
-        horizontalLayout_2->addWidget(pushButton_5);
-
-        pushButton_2 = new QPushButton(horizontalLayoutWidget);
-        pushButton_2->setObjectName(QString::fromUtf8("pushButton_2"));
-
-        horizontalLayout_2->addWidget(pushButton_2);
-
-        pushButton = new QPushButton(horizontalLayoutWidget);
-        pushButton->setObjectName(QString::fromUtf8("pushButton"));
-
-        horizontalLayout_2->addWidget(pushButton);
-
-        verticalLayoutWidget_3 = new QWidget(centralwidget);
-        verticalLayoutWidget_3->setObjectName(QString::fromUtf8("verticalLayoutWidget_3"));
-        //verticalLayoutWidget_3->setGeometry(QRect(310, 60, 137, 110));
-        
-
-        verticalLayout_3 = new QVBoxLayout(verticalLayoutWidget_3);
-        verticalLayout_3->setObjectName(QString::fromUtf8("verticalLayout_3"));
-        verticalLayout_3->setContentsMargins(0, 0, 0, 0);
-        lineEdit_7 = new QLineEdit(verticalLayoutWidget_3);
-        lineEdit_7->setObjectName(QString::fromUtf8("lineEdit_7"));
-
-        verticalLayout_3->addWidget(lineEdit_7);
-
-        lineEdit_9 = new QLineEdit(verticalLayoutWidget_3);
-        lineEdit_9->setObjectName(QString::fromUtf8("lineEdit_9"));
-
-        verticalLayout_3->addWidget(lineEdit_9);
-
-        lineEdit_8 = new QLineEdit(verticalLayoutWidget_3);
-        lineEdit_8->setObjectName(QString::fromUtf8("lineEdit_8"));
-
-        verticalLayout_3->addWidget(lineEdit_8);
-
-        verticalLayoutWidget_2 = new QWidget(centralwidget);
-        verticalLayoutWidget_2->setObjectName(QString::fromUtf8("verticalLayoutWidget_2"));
-        //verticalLayoutWidget_2->setGeometry(QRect(6, 48, 137, 110));
-        
-        verticalLayout_2 = new QVBoxLayout(verticalLayoutWidget_2);
-        verticalLayout_2->setObjectName(QString::fromUtf8("verticalLayout_2"));
-        verticalLayout_2->setContentsMargins(0, 0, 0, 0);
-        lineEdit_4 = new QLineEdit(verticalLayoutWidget_2);
-        lineEdit_4->setObjectName(QString::fromUtf8("lineEdit_4"));
-
-        verticalLayout_2->addWidget(lineEdit_4);
-
-        lineEdit_6 = new QLineEdit(verticalLayoutWidget_2);
-        lineEdit_6->setObjectName(QString::fromUtf8("lineEdit_6"));
-
-        verticalLayout_2->addWidget(lineEdit_6);
-
-        lineEdit_5 = new QLineEdit(verticalLayoutWidget_2);
-        lineEdit_5->setObjectName(QString::fromUtf8("lineEdit_5"));
-
-        verticalLayout_2->addWidget(lineEdit_5);
-
-        lineEdit_3 = new QLineEdit(centralwidget);
-        lineEdit_3->setObjectName(QString::fromUtf8("lineEdit_3"));
-        //lineEdit_3->setGeometry(QRect(150, 87, 135, 32));
-        lineEdit = new QLineEdit(centralwidget);
-        lineEdit->setObjectName(QString::fromUtf8("lineEdit"));
-        //lineEdit->setGeometry(QRect(150, 49, 135, 32));
-        lineEdit_2 = new QLineEdit(centralwidget);
-        lineEdit_2->setObjectName(QString::fromUtf8("lineEdit_2"));
-        //lineEdit_2->setGeometry(QRect(150, 125, 135, 32));
-*/        
-        this->setCentralWidget(centralwidget);
-
-/*______Menu_Stuff_is_here!__________________________________________________________________________________________
-    
-        menubar = new QMenuBar(this);
-        menubar->setObjectName(QString::fromUtf8("menubar"));
-        menubar->setGeometry(QRect(0, 0, 800, 30));
-
-        menuFile =new QMenu(menubar);
-        menuFile->setObjectName(QString::fromUtf8("menufile"));
-
-        menuHelp = new QMenu(menubar);
-        menuHelp->setObjectName(QString::fromUtf8("menuHelp"));
-        this->setMenuBar(menubar);
-
-        menubar->addAction(menuFile->menuAction());
-        menuFile->addAction(actionQuit);
-        
-        menubar->addAction(menuHelp->menuAction());
-        menuHelp->addAction(actionAbout);
-*/
-
-/*______Status_bar_setup_is_here!____________________________________________________________________________________*/
-        
-        createMenus();
-
-        statusbar = new QStatusBar(this);
-        statusbar->setObjectName(QString::fromUtf8("statusbar"));
-        this->setStatusBar(statusbar);
-       
-
-        QMetaObject::connectSlotsByName(this);
-        //QObject::connect(actionQuit, SIGNAL clicked()); //This gave errors
-        //connect(actionQuit, SIGNAL (mousePressEvent()), this, SLOT (actionQuitClicked()));
-
-    void retranslateUi(QMainWindow *MainWindow);
-    {
-        this->setWindowTitle(QCoreApplication::translate("MainWindow", "Cplot", nullptr));
-        actionAbout->setText(QCoreApplication::translate("MainWindow", "About", nullptr));
-        actionQuit->setText(QCoreApplication::translate("MainWindow", "Quit", nullptr));
-
-//        pushButton_4->setText(QCoreApplication::translate("MainWindow", "PushButton", nullptr));
- //       pushButton_3->setText(QCoreApplication::translate("MainWindow", "PushButton", nullptr));
-  //      pushButton_5->setText(QCoreApplication::translate("MainWindow", "PushButton", nullptr));
-    //    pushButton_2->setText(QCoreApplication::translate("MainWindow", "PushButton", nullptr));
-     //   pushButton->setText(QCoreApplication::translate("MainWindow", "PushButton", nullptr));
-        
-        
-        menuFile->setTitle(QCoreApplication::translate("Mainwindow", "File", nullptr));
-        menuHelp->setTitle(QCoreApplication::translate("MainWindow", "Help", nullptr));
-        menuGraph->setTitle(QCoreApplication::translate("MainWindow", "Graph", nullptr));
-
-        }; // retranslateUi
-
-        QMetaObject::connectSlotsByName(this);
-    } // setupUi
-
-/*______Menu_Items___________________________________________________________________________________________________*/
-void Cplot::createMenus()
-{
-    menubar = new QMenuBar(this);
-    menubar->setObjectName(QString::fromUtf8("menubar"));
-    menubar->setGeometry(QRect(0, 0, 800, 30));
-
-
-    menuFile =new QMenu(menubar);
-    menuFile->setObjectName(QString::fromUtf8("menufile"));
-
-    menuHelp = new QMenu(menubar);
-    menuHelp->setObjectName(QString::fromUtf8("menuHelp"));
-
-    menuGraph = new QMenu(menubar);
-    menuGraph->setObjectName("menuGraph");
-
-    menubar->addAction(menuFile->menuAction());
-    menuFile->addAction(actionQuit);
-        
-    menubar->addAction(menuHelp->menuAction());
-    menuHelp->addAction(actionAbout);
-
-    menubar->addAction(menuGraph->menuAction());
-    menuGraph->addAction(actionAbout);
-
-
-
-
-    menuScale_Style = new QMenu(menuGraph);
-    menuScale_Style->setObjectName("menuScale_Style");
-    this->setMenuBar(menubar);
-
-
-}
-
-/*
-/*__Application_Actions_____________________________________________________________________________________________*/
-void Cplot::createActions()
-{
-    //File
-    
-    //File/Save
-
-    //File/Export
-
-    //File/Quit
-    actionQuit = new QAction(tr("Quit"), this);
-    actionQuit->setObjectName(QString::fromUtf8("actionQuit"));
-    actionQuit->setShortcuts(QKeySequence::Quit);
-    actionQuit->setIcon(QIcon::fromTheme(QString("application-exit")));
-
-    //Help
-
-    //Help/User Manual
-
-    //Help/About CPlot
-    actionAbout = new QAction(tr("About CPlot"), this);
-    actionAbout->setObjectName(QString::fromUtf8("actionAbout"));
-    actionAbout->setIcon(QIcon::fromTheme(QString("help-about")));
-
-    //actionQuit = new QAction(MainWindow);
-    //actionQuit->setObjectName("actionQuit");
-    actionSave = new QAction(this);
-    actionSave->setObjectName("actionSave");
-    actionPlot = new QAction(this);
-    actionPlot->setObjectName("actionPlot");
-    actionEvaluate = new QAction(this);
-    actionEvaluate->setObjectName("actionEvaluate");
-    actionContents = new QAction(this);
-    actionContents->setObjectName("actionContents");
-    //actionAbout = new QAction(MainWindow);
-    //actionAbout->setObjectName("actionAbout");
-    actionZoom_In = new QAction(this);
-    actionZoom_In->setObjectName("actionZoom_In");
-    actionZoom_Out = new QAction(this);
-    actionZoom_Out->setObjectName("actionZoom_Out");
-    actionZoom_Reset = new QAction(this);
-    actionZoom_Reset->setObjectName("actionZoom_Reset");
-    actionConnect_Points = new QAction(this);
-    actionConnect_Points->setObjectName("actionConnect_Points");
-    actionConnect_Points->setCheckable(true);
-    actionDecimal = new QAction(this);
-    actionDecimal->setObjectName("actionDecimal");
-    actionRadians = new QAction(this);
-    actionRadians->setObjectName("actionRadians");
-    actionRadians_2 = new QAction(this);
-    actionRadians_2->setObjectName("actionRadians_2");
-    actionCustom = new QAction(this);
-    actionCustom->setObjectName("actionCustom");
-    actionExport_Resolution = new QAction(this);
-    actionExport_Resolution->setObjectName("actionExport_Resolution");
-
-    
-    connect(actionQuit, &QAction::triggered, this, &Cplot::quit);
-}
-
-
-Cplot::~Cplot()
-    {
-        //delete ui;
-
-    }
-
-void Cplot::quit()
-{
-    QApplication::quit();
-}
-
-/*
-QAction *quit(const QObject *recvr, const char *slot, QObject *parent)
-{
-    return KStandardAction::create(Quit, recvr, slot, parent);
-}
-*/
-
-
-
-//Add stuff here
-
-/*
-    MainWindow->resize(895, 634);
-        QIcon icon(QIcon::fromTheme(QString::fromUtf8("lybniz")));
-        MainWindow->setWindowIcon(icon);
-        actionQuit = new QAction(MainWindow);
+        QIcon icon(QIcon::fromTheme(QString::fromUtf8("Cplot")));
+        this->setWindowIcon(icon);
+
+/*______Actions_Here_________________________________________________________________________________*/
+        actionQuit = new QAction(this);
         actionQuit->setObjectName("actionQuit");
-        actionSave = new QAction(MainWindow);
+        actionSave = new QAction(this);
         actionSave->setObjectName("actionSave");
-        actionPlot = new QAction(MainWindow);
+        actionPlot = new QAction(this);
         actionPlot->setObjectName("actionPlot");
-        actionEvaluate = new QAction(MainWindow);
+        actionEvaluate = new QAction(this);
         actionEvaluate->setObjectName("actionEvaluate");
-        actionContents = new QAction(MainWindow);
+        actionContents = new QAction(this);
         actionContents->setObjectName("actionContents");
-        actionAbout = new QAction(MainWindow);
+        actionAbout = new QAction(this);
         actionAbout->setObjectName("actionAbout");
-        actionZoom_In = new QAction(MainWindow);
+        actionZoom_In = new QAction(this);
         actionZoom_In->setObjectName("actionZoom_In");
-        actionZoom_Out = new QAction(MainWindow);
+        actionZoom_Out = new QAction(this);
         actionZoom_Out->setObjectName("actionZoom_Out");
-        actionZoom_Reset = new QAction(MainWindow);
+        actionZoom_Reset = new QAction(this);
         actionZoom_Reset->setObjectName("actionZoom_Reset");
-        actionConnect_Points = new QAction(MainWindow);
+        actionConnect_Points = new QAction(this);
         actionConnect_Points->setObjectName("actionConnect_Points");
         actionConnect_Points->setCheckable(true);
-        actionDecimal = new QAction(MainWindow);
+        actionDecimal = new QAction(this);
         actionDecimal->setObjectName("actionDecimal");
-        actionRadians = new QAction(MainWindow);
+        actionRadians = new QAction(this);
         actionRadians->setObjectName("actionRadians");
-        actionRadians_2 = new QAction(MainWindow);
+        actionRadians_2 = new QAction(this);
         actionRadians_2->setObjectName("actionRadians_2");
-        actionCustom = new QAction(MainWindow);
+        actionCustom = new QAction(this);
         actionCustom->setObjectName("actionCustom");
-        actionExport_Resolution = new QAction(MainWindow);
+        actionExport_Resolution = new QAction(this);
         actionExport_Resolution->setObjectName("actionExport_Resolution");
- 
-        centralwidget = new QWidget(MainWindow);
+
+/*______Gui_components_here_______________________________________________________________________________________*/
+        centralwidget = new QWidget(this);
         centralwidget->setObjectName("centralwidget");
         gridLayout = new QGridLayout(centralwidget);
         gridLayout->setObjectName("gridLayout");
@@ -576,8 +217,9 @@ QAction *quit(const QObject *recvr, const char *slot, QObject *parent)
 
         gridLayout->addWidget(y1_label, 2, 0, 1, 1);
 
-        MainWindow->setCentralWidget(centralwidget);
-        menubar = new QMenuBar(MainWindow);
+/*______Menu_Items_here_________________________________________________________________________________________*/
+        this->setCentralWidget(centralwidget);
+        menubar = new QMenuBar(this);
         menubar->setObjectName("menubar");
         menubar->setGeometry(QRect(0, 0, 895, 30));
         menuFile = new QMenu(menubar);
@@ -588,10 +230,10 @@ QAction *quit(const QObject *recvr, const char *slot, QObject *parent)
         menuScale_Style->setObjectName("menuScale_Style");
         menuHelp = new QMenu(menubar);
         menuHelp->setObjectName("menuHelp");
-        MainWindow->setMenuBar(menubar);
-        statusbar = new QStatusBar(MainWindow);
+        this->setMenuBar(menubar);
+        statusbar = new QStatusBar(this);
         statusbar->setObjectName("statusbar");
-        MainWindow->setStatusBar(statusbar);
+        this->setStatusBar(statusbar);
 
         menubar->addAction(menuFile->menuAction());
         menubar->addAction(menuGraph->menuAction());
@@ -613,27 +255,27 @@ QAction *quit(const QObject *recvr, const char *slot, QObject *parent)
         menuHelp->addAction(actionContents);
         menuHelp->addAction(actionAbout);
 
-        retranslateUi(MainWindow);
-        QObject::connect(actionQuit, &QAction::triggered, MainWindow, qOverload<>(&QMainWindow::close));
-        QObject::connect(zoom_in_btn, SIGNAL(clicked()), MainWindow, SLOT(zoom_in()));
-        QObject::connect(eval_fns_btn, SIGNAL(clicked()), MainWindow, SLOT(evaluate()));
-        QObject::connect(zoom_out_btn, SIGNAL(clicked()), MainWindow, SLOT(zoom_out()));
-        QObject::connect(zoom_reset_btn, SIGNAL(clicked()), MainWindow, SLOT(zoom_reset()));
-        QObject::connect(plot_fns_btn, SIGNAL(clicked()), MainWindow, SLOT(plot_function()));
-        QObject::connect(y1_input, SIGNAL(returnPressed()), MainWindow, SLOT(y1_input()));
-        QObject::connect(y2_input, SIGNAL(returnPressed()), MainWindow, SLOT(y3_input()));
-        QObject::connect(x_min_input, SIGNAL(returnPressed()), MainWindow, SLOT(xmin_input()));
-        QObject::connect(x_max_input, SIGNAL(returnPressed()), MainWindow, SLOT(xmax_input()));
-        QObject::connect(y_min_input, SIGNAL(returnPressed()), MainWindow, SLOT(ymin_input()));
-        QObject::connect(y_max_input, SIGNAL(returnPressed()), MainWindow, SLOT(ymax_input()));
-        QObject::connect(y3_input, SIGNAL(returnPressed()), MainWindow, SLOT(y3_input()));
+ //       retranslateUi(this);
+        QObject::connect(actionQuit, &QAction::triggered, this, qOverload<>(&QMainWindow::close));
+        QObject::connect(zoom_in_btn, SIGNAL(clicked()), this, SLOT(zoom_in()));
+        QObject::connect(eval_fns_btn, SIGNAL(clicked()), this, SLOT(evaluate()));
+        QObject::connect(zoom_out_btn, SIGNAL(clicked()), this, SLOT(zoom_out()));
+        QObject::connect(zoom_reset_btn, SIGNAL(clicked()), this, SLOT(zoom_reset()));
+        QObject::connect(plot_fns_btn, SIGNAL(clicked()), this, SLOT(plot_function()));
+        QObject::connect(y1_input, SIGNAL(returnPressed()), this, SLOT(y1_input()));
+        QObject::connect(y2_input, SIGNAL(returnPressed()), this, SLOT(y3_input()));
+        QObject::connect(x_min_input, SIGNAL(returnPressed()), this, SLOT(xmin_input()));
+        QObject::connect(x_max_input, SIGNAL(returnPressed()), this, SLOT(xmax_input()));
+        QObject::connect(y_min_input, SIGNAL(returnPressed()), this, SLOT(ymin_input()));
+        QObject::connect(y_max_input, SIGNAL(returnPressed()), this, SLOT(ymax_input()));
+        QObject::connect(y3_input, SIGNAL(returnPressed()), this, SLOT(y3_input()));
 
-        QMetaObject::connectSlotsByName(MainWindow);
-    } // setupUi
+        QMetaObject::connectSlotsByName(this);
+//    } // setupUi
 
-    void retranslateUi(QMainWindow *MainWindow)
+    void retranslateUi(QMainWindow *Mainwindiw);
     {
-        MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "Lybniz Qt", nullptr));
+        this->setWindowTitle(QCoreApplication::translate("MainWindow", "Something", nullptr));
         actionQuit->setText(QCoreApplication::translate("MainWindow", "&Quit", nullptr));
 #if QT_CONFIG(shortcut)
         actionQuit->setShortcut(QCoreApplication::translate("MainWindow", "Ctrl+Q", nullptr));
@@ -692,8 +334,22 @@ QAction *quit(const QObject *recvr, const char *slot, QObject *parent)
         menuGraph->setTitle(QCoreApplication::translate("MainWindow", "&Graph", nullptr));
         menuScale_Style->setTitle(QCoreApplication::translate("MainWindow", "&Scale Style", nullptr));
         menuHelp->setTitle(QCoreApplication::translate("MainWindow", "Help", nullptr));
-    } // retranslateUi
 
-*/
+        }; // retranslateUi
+    } // setupUi
+
+
+
+
+
+
+
+Cplot::~Cplot()
+    {
+        //delete ui;
+
+    }
+
+
 
 QT_END_NAMESPACE
