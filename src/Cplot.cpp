@@ -61,33 +61,50 @@ Cplot::Cplot(QWidget *parent)
 /*______Actions_Here_________________________________________________________________________________*/
         actionQuit = new QAction(this);
         actionQuit->setObjectName("actionQuit");
+        actionQuit->setShortcuts(QKeySequence::Quit);
+        actionQuit->setIcon(QIcon::fromTheme(QString("application-exit")));
+
         actionSave = new QAction(this);
         actionSave->setObjectName("actionSave");
+        
         actionPlot = new QAction(this);
         actionPlot->setObjectName("actionPlot");
+        
         actionEvaluate = new QAction(this);
         actionEvaluate->setObjectName("actionEvaluate");
+        
         actionContents = new QAction(this);
         actionContents->setObjectName("actionContents");
+        
         actionAbout = new QAction(this);
         actionAbout->setObjectName("actionAbout");
+        actionAbout->setIcon(QIcon::fromTheme(QString("help-about")));
+        
         actionZoom_In = new QAction(this);
         actionZoom_In->setObjectName("actionZoom_In");
+        
         actionZoom_Out = new QAction(this);
         actionZoom_Out->setObjectName("actionZoom_Out");
+        
         actionZoom_Reset = new QAction(this);
         actionZoom_Reset->setObjectName("actionZoom_Reset");
+        
         actionConnect_Points = new QAction(this);
         actionConnect_Points->setObjectName("actionConnect_Points");
         actionConnect_Points->setCheckable(true);
+        
         actionDecimal = new QAction(this);
         actionDecimal->setObjectName("actionDecimal");
+        
         actionRadians = new QAction(this);
         actionRadians->setObjectName("actionRadians");
+        
         actionRadians_2 = new QAction(this);
         actionRadians_2->setObjectName("actionRadians_2");
+        
         actionCustom = new QAction(this);
         actionCustom->setObjectName("actionCustom");
+        
         actionExport_Resolution = new QAction(this);
         actionExport_Resolution->setObjectName("actionExport_Resolution");
 
@@ -257,7 +274,8 @@ Cplot::Cplot(QWidget *parent)
 
  //       retranslateUi(this);
         QObject::connect(actionQuit, &QAction::triggered, this, qOverload<>(&QMainWindow::close));
-        QObject::connect(zoom_in_btn, SIGNAL(clicked()), this, SLOT(zoom_in()));
+        //QObject::connect(actionAbout, &QAction::triggered, this, AboutWindow());
+/*        QObject::connect(zoom_in_btn, SIGNAL(clicked()), this, SLOT(zoom_in()));
         QObject::connect(eval_fns_btn, SIGNAL(clicked()), this, SLOT(evaluate()));
         QObject::connect(zoom_out_btn, SIGNAL(clicked()), this, SLOT(zoom_out()));
         QObject::connect(zoom_reset_btn, SIGNAL(clicked()), this, SLOT(zoom_reset()));
@@ -269,7 +287,7 @@ Cplot::Cplot(QWidget *parent)
         QObject::connect(y_min_input, SIGNAL(returnPressed()), this, SLOT(ymin_input()));
         QObject::connect(y_max_input, SIGNAL(returnPressed()), this, SLOT(ymax_input()));
         QObject::connect(y3_input, SIGNAL(returnPressed()), this, SLOT(y3_input()));
-
+*/
         QMetaObject::connectSlotsByName(this);
 //    } // setupUi
 
@@ -338,6 +356,10 @@ Cplot::Cplot(QWidget *parent)
         }; // retranslateUi
     } // setupUi
 
+void Cplot::quit()
+{
+    QApplication::quit();
+}
 
 
 

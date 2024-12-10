@@ -81,17 +81,14 @@ public:
 
     void retranslateUi(QMainWindow *Mainwindow);
     
-/*
+
 private slots:
     //void newInstance();
-//    void quit();
+    void quit();
     //...
-*/
+
 
 private:
- //   void createActions();
- //   void createMenus();
-
     QAction *actionQuit;
     QAction *actionSave;
     QAction *actionPlot;
