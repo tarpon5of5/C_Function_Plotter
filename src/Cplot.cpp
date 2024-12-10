@@ -48,7 +48,7 @@ SOFTWARE.
 
 
 QT_BEGIN_NAMESPACE
-
+/*****************************************************************************************************************/
 Cplot::Cplot(QWidget *parent)
     : QMainWindow(parent)
     {
@@ -355,7 +355,7 @@ Cplot::Cplot(QWidget *parent)
 
         }; // retranslateUi
     } // setupUi
-
+/*******************************************************************************************************************/
 void Cplot::quit()
 {
     QApplication::quit();
