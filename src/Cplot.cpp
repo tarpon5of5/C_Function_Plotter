@@ -45,7 +45,7 @@ SOFTWARE.
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 #include <QIcon>
-
+//#include <Scl>
 
 QT_BEGIN_NAMESPACE
 /*****************************************************************************************************************/
@@ -66,6 +66,7 @@ Cplot::Cplot(QWidget *parent)
 
         actionSave = new QAction(this);
         actionSave->setObjectName("actionSave");
+        actionSave->setIcon(QIcon::fromTheme(QString("document-save-as")));
         
         actionPlot = new QAction(this);
         actionPlot->setObjectName("actionPlot");
@@ -362,6 +363,10 @@ void Cplot::quit()
 }
 
 
+void Cplot::GraphWidget()
+{
+    
+}
 
 
 

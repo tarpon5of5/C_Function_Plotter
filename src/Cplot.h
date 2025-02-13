@@ -80,6 +80,7 @@ public:
     Cplot *ui;
 
     void retranslateUi(QMainWindow *Mainwindow);
+    void GraphWidget();
     
 
 private slots:

@@ -48,3 +48,4 @@ int main(int argc, char *argv[]) // argc and argv are here to allow command line
 
     return app.exec();
 }
+
